@@ -30,12 +30,12 @@ namespace CastleGrimtol
                         game.Look(game.CurrentRoom);        
                     }
                 
-                else if(userInput[0] ==  "t" || userInput[0] == "take")
+                else if(userInput[0] ==  "t" || userInput[0] == "take" && userInput[1] != null)
                 {
                     
                     game.Take(userInput[1]);
                 }
-                  else if (userInput[0] == "u" || userInput[0] == "use")
+                  else if (userInput[0] == "u" || userInput[0] == "use" && userInput[1] != null)
                 {
                     game.UseItem(userInput[1]);
                     game.Look(game.CurrentRoom);

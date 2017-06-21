@@ -52,7 +52,7 @@ namespace CastleGrimtol.Game
 
         public void Help()
         {
-            Console.WriteLine("north, south, east, west - moves your player.  \nl or look will make you look around the current room.  \ni or inventory will show your inventory. \nt or take will take the item from a room. \nq or quit will quit the game.\n r or reset will reset the game.");
+            Console.WriteLine("north, south, east, west - moves your player.  \nl or look will make you look around the current room.  \ni or inventory will show your inventory. \nt or take will take the item from a room. \nq or quit will quit the game.\n r or reset will reset the game.\n u or use will use an item.");
         }
          
 
@@ -105,7 +105,17 @@ namespace CastleGrimtol.Game
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Man you were hungry! Good thing you found those mushrooms!  Stomach is starting to feel a little weird though!");
                 Console.WriteLine("DEAD!!!!!!!!!! SHOULDN'T HAVE EATEN THOSE MUSHROOMS!!!!!");
-                Playing = false;
+                Console.WriteLine("play again? - y/n");
+              string input = Console.ReadLine().ToLower();
+              if(input == "y")
+              {
+                  Reset();
+              }
+              else if(input == "n")
+              {
+                Console.Clear();
+                Environment.Exit(0);
+              }
             }
 
         }
